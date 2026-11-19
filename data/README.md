@@ -11,6 +11,8 @@
 | **Licence** | Licence Ouverte / Open Licence Etalab 2.0 |
 | **SHA-256** | `5266b50adfec0161ae8ae2b777674e15ac5b3f980086044d6ea380ac15987a10` |
 
+Emplacement S3 (brut) : `s3://user-f-braud-ece/raw/bodacc_idf_2022_2025.json`.
+
 ## Filtres
 
 - Départements d'Île-de-France : 75, 77, 78, 91, 92, 93, 94, 95 (`region_code = 11`)

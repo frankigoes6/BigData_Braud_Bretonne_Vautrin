@@ -41,10 +41,12 @@ selon le secteur ?
 
 ## Chemins S3
 
+**Bucket** : `user-f-braud-ece` (bucket personnel Onyxia).
+
 | Donnée | Chemin |
 |---|---|
-| Brut | `s3://<bucket>/raw/bodacc/` |
-| Traité | `s3://<bucket>/processed/bodacc/` |
+| Brut | `s3://user-f-braud-ece/raw/` — fichier `bodacc_idf_2022_2025.json` |
+| Traité | `s3://user-f-braud-ece/processed/bodacc/` |
 
 ## Reproduction
 
@@ -56,15 +58,20 @@ cd BigData_Braud_Bretonne_Vautrin
 # 2. (Re)générer les données brutes — optionnel, le fichier est déjà versionné
 python3 src/fetch_bodacc.py
 
-# 3. Déposer le brut sur S3 (adapter le bucket et le profil)
-aws s3 cp data/bodacc_idf_2022_2025.json s3://<bucket>/raw/bodacc/
+# 3. Déposer le brut sur S3 (adapter l'endpoint à celui de ton compte Onyxia)
+export S3_ENDPOINT="https://minio.lab.sspcloud.fr"   # Mon compte > Mes clés S3
+aws s3 cp data/bodacc_idf_2022_2025.json \
+  "s3://user-f-braud-ece/raw/" --endpoint-url "$S3_ENDPOINT"
+
+# Vérifier
+aws s3 ls "s3://user-f-braud-ece/raw/" --endpoint-url "$S3_ENDPOINT"
 
 # 4. Exécuter le pipeline de nettoyage et d'agrégation
 #    TODO : commande à compléter (Spark ou DuckDB)
 ```
 
 **Redémarrage** : relancer les étapes 3 et 4. Le pipeline doit être idempotent
-(réécriture complète des préfixes `raw/bodacc/` et `processed/bodacc/`).
+(réécriture complète des préfixes `raw/` et `processed/bodacc/`).
 
 ## Structure du dépôt
 
