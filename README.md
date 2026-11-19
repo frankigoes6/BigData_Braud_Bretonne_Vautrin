@@ -5,9 +5,9 @@ Projet **Écosystème Big Data II** — pipeline de traitement des annonces BODA
 
 ## Auteurs
 
-- BRAUD — [Prénom]
-- BRETONNE — [Prénom]
-- VAUTRIN — [Prénom]
+- BRAUD Frank
+- BRETONNE Mathis
+- VAUTRIN Denis
 
 ## Prérequis
 
