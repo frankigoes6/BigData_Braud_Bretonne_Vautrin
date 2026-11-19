@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Fichiers non matérialisés par iCloud Drive
+*.icloud
+
+# Secrets / identifiants locaux
+.env
+.aws/
