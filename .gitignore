@@ -8,3 +8,14 @@
 # Secrets / identifiants locaux
 .env
 .aws/
+
+# Environnement local
+.venv/
+out/
+
+# Cache NAF (regenerable)
+data/sirene_naf.json
+
+# Python
+__pycache__/
+*.pyc
