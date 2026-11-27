@@ -13,6 +13,9 @@
 
 Emplacement S3 (brut) : `s3://user-f-braud-ece/raw/bodacc_idf_2022_2025.json`.
 
+Le fichier est livré brut, sans correction : les anomalies sont comptées par
+`src/quality.py` et détaillées dans `data/quality_report.json`.
+
 ## Filtres
 
 - Départements d'Île-de-France : 75, 77, 78, 91, 92, 93, 94, 95 (`region_code = 11`)
